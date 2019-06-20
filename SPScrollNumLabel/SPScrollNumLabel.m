@@ -91,6 +91,8 @@
                     [hisLabel removeFromSuperview];
                 }];
             }else{
+                if (self.isCommonLabel == false && self.targetNumber != 0) { label.alpha = 1; }
+                else { label.alpha = 0; }
                 [self.sepLabelArr[hisTargetIndex] removeFromSuperview];
             }
         }else{
