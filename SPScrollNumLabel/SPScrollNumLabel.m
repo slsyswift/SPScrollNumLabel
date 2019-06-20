@@ -70,13 +70,13 @@
         NSInteger targetIndex = targetLength - i - 1;
         NSInteger hisTargetIndex = hisLength - i - 1;
         if (i < hisLength) {
-            if (![sepStrArr[targetIndex] isEqualToString:self.sepNumArr[hisTargetIndex]]) {
-                BOOL increase = sepStrArr[targetIndex].integerValue > self.sepNumArr[hisTargetIndex].integerValue;
                 // his label
                 UILabel *hisLabel = self.sepLabelArr[hisTargetIndex];
-                CGRect hisTargetFrame = CGRectOffset(hisLabel.frame, 0, (increase?-1:1)*hisLabel.frame.size.height);
                 // new label
                 UILabel *label = sepLabelArr[targetIndex];
+            if (![sepStrArr[targetIndex] isEqualToString:self.sepNumArr[hisTargetIndex]]) {
+                BOOL increase = sepStrArr[targetIndex].integerValue > self.sepNumArr[hisTargetIndex].integerValue;
+                CGRect hisTargetFrame = CGRectOffset(hisLabel.frame, 0, (increase?-1:1)*hisLabel.frame.size.height);
                 CGRect frame = label.frame;
                 CGRect targetFrame = CGRectOffset(frame, 0, (increase?1:-1)*label.frame.size.height);
                 label.frame = targetFrame;
