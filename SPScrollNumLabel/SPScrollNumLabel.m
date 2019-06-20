@@ -85,7 +85,8 @@
                     hisLabel.frame = hisTargetFrame;
                     label.frame = frame;
                     hisLabel.alpha = 0;
-                    label.alpha = 1;
+//                     label.alpha = 1;
+                    if (![label.text isEqualToString:@"0"]) { label.alpha = 1; }
                 } completion:^(BOOL finished) {
                     [hisLabel removeFromSuperview];
                 }];
